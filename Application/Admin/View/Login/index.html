@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>注册登录</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="__PUBLIC__/images/666.png">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/login.css">
+</head>
+<body>
+<div class="container">
+	<div class="main">
+		<div class="logo">
+			<img src="__PUBLIC__/images/admin/logo.png">
+		</div>
+		<form role="form">
+			<div class="form-group" id="email">  
+			    <input type="email" class="form-control" name="email" placeholder="Email">
+			    <label class="email">Email address</label>
+			</div>
+			<div class="form-group" id="password">
+			    <input type="password" class="form-control" name="password" placeholder="密码">
+			    <label class="password">Password</label>
+			</div>
+			<div class="row form-group" id="captcha">
+			  <div class="col-xs-6 col-md-6">
+			    <input type="text" class="form-control" name="captcha" placeholder="4位验证码">
+			    <label class="captcha">Captcha</label>
+			  </div>
+			  <div class="col-xs-4 col-md-4">
+			    <img id="captcha_img" src="{:U('Admin/login/verify_c')}">
+			  </div>
+			</div>
+			<p><a href="#">忘记了密码？</a></p>
+			<button class="btn btn-block btn-success" type="button" onclick="login.check()">登录</button>
+			
+		</form>
+	</div>
+	
+</div>
+<!-- 信息提示modal -->
+<!-- Modal -->
+<include file="Login/modal" />
+<script>
+  var SCOPE = {
+    'index_url' : '{:U('Admin/index/index')}',/*/Think/admin/image/ajaxuploadimage*/
+  };
+
+</script>
+
+<script src="__PUBLIC__/js/jquery-3.1.1.min.js"></script>
+<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/admin/login.js"></script>
+</body>
+</html>

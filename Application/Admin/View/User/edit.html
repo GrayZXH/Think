@@ -1,0 +1,111 @@
+<include file="Index/head" title="{$title}" keywords="{$keywords}" description="{$description}" />
+<body>
+<include file="Index/navbar"/>
+<div class="container">
+	<div class="row">
+		<div class="hidden-xs col-sm-2 col-md-2 con_l">
+			<include file="Index/leftnavbar" />
+		</div>
+		<div class="col-xs-12 col-sm-10 col-md-10 con_r">
+			<div class="con_r_nav">
+				<nav class="navbar navbar-default" role="navigation">
+				  <div class="container-fluid">
+				    <!-- Brand and toggle get grouped for better mobile display -->
+				    <div class="navbar-header">
+				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarmenu2">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+				      <a class="navbar-brand">用户管理</a>
+				    </div>
+
+				    <!-- Collect the nav links, forms, and other content for toggling -->
+				    <div class="collapse navbar-collapse" id="navbarmenu2">
+				      <ul class="nav navbar-nav">
+				        <li><a href="{:U('Admin/User/index')}"><i class="fa fa-user"></i>&nbsp;管理员列表</a></li>
+				        <li role="presentation" class="dropdown">
+						    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						      <i class="fa fa-user-circle-o"></i>&nbsp;用户列表 <span class="caret"></span>
+						    </a>
+						    <ul class="dropdown-menu" role="menu">
+						      <li><a href="{:U('Admin/User/users')}"><i class="fa fa-users"></i>&nbsp;&nbsp;所有用户</a></li>
+						      <li><a href="{:U('Admin/User/forbid')}"><i class="fa fa-ban"></i>&nbsp;&nbsp;受限用户</a></li>
+						      <li><a href="{:U('Admin/User/deleted')}"><i class="fa fa-trash"></i>&nbsp;&nbsp;已删用户</a></li>
+						    </ul>
+						</li>
+						<li><a href="{:U('Admin/User/add')}"><i class="fa fa-user-plus"></i>&nbsp;添加管理员</a></li>
+						<li class="active"><a href="{:U('Admin/User/add')}"><i class="fa fa-user-times"></i>&nbsp;编辑资料</a></li>
+				      </ul>
+				      <form class="navbar-form navbar-right" role="search">
+				        <div class="form-group">
+				          <input type="text" class="form-control" placeholder="用户搜索">
+				        </div>
+				        <button type="submit" class="btn btn-default">搜索</button>
+				      </form>
+				    </div><!-- /.navbar-collapse -->
+				  </div><!-- /.container-fluid -->
+				</nav>
+			</div>
+			<div class="con_r_con">
+				
+				<div class="adduser"><!-- 添加用户 -->
+					 <form role="form">
+					  	<div class="form-group">
+					    <label for="email">邮箱*(必填)</label>
+					    <input type="email" class="form-control" id="email" placeholder="Enter email">
+					  	</div>
+					  	<div class="form-group">
+					    <label for="username">用户名*(必填)</label>
+					    <input type="text" class="form-control" id="username" placeholder="3-10字母、数字、汉字、下划线">
+					  	</div>
+					  	<div class="form-group">
+					    <label for="password">密码*(必填)</label>
+					    <input type="password" class="form-control" id="password" placeholder="6-18位字母、数字、下划线">
+					  	</div>
+					  	<div class="form-group">
+					    <label for="phone">手机（选填）</label>
+					    <input type="tel" class="form-control" id="phone" placeholder="Enter PhoneNumber">
+					  	</div>
+					  	<div class="form-group">
+					  	<label>权限（选填）</label>
+					  	<select class="form-control" id="level">
+						  	<option value="1">超级管理员</option>
+						  	<option value="2">管理员</option>
+						  	<option value="3">Guest</option>
+						  	<option value="11">User</option>
+						</select>
+					   	</div>
+					   	<label>头像</label>
+					   	<div class="form-group avatar">
+					
+					   	<label class="radio-inline">
+						  	<input type="radio" name="avatar" checked="checked" id="avatar1" value="1"> <img class="img-circle img-responsive" src="__PUBLIC__/images/666.png">
+						</label>
+						<label class="radio-inline">
+						  	<input type="radio" name="avatar" id="avatar2" value="2"> <img class="img-circle img-responsive" src="__PUBLIC__/images/666.png">
+						</label>
+						</div>
+						<div class="row form-group">
+						  <div class="col-xs-6 col-md-6">
+						    <input type="text" class="form-control" id="captcha" placeholder="4位验证码">
+						  </div>
+						  <div class="col-xs-4 col-md-4">
+						    <img id="captcha_img" src="{:U('Admin/User/verify_c')}">
+						  </div>
+						</div>
+					  	<button type="button" class="btn btn-success btn-block" onclick="add.check()">提交</button>
+					</form> 
+				</div>
+				
+
+			</div>
+		</div>
+	</div>
+</div>
+<include file="Login/modal" />
+<include file="Index/js" />
+<import type='js' file="js.admin.useradd" />
+</body>
+</html>

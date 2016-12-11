@@ -1,0 +1,54 @@
+body{
+	font-family: "Helvetica Neue","Helvetica", "Microsoft Yahei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+	background-color: #F1F1F1;
+}
+
+#brand{
+	font-weight: bold;
+	font-size: 2em;
+}
+.con_r_nav{
+	background-color: #e7e7e7;
+}
+.con_r_nav .navbar-default{
+	background-color: #FFF;
+}
+.con_r_nav .navbar-default .navbar-nav>.active>a{
+	background-color: #FFF;
+	border-bottom:2px solid #00CCCC;
+}
+.con_r .con_r_con{
+	background-color: #FFF;
+}
+.con_l_nav{
+	text-align: center;
+}
+.con_l_nav li a{
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #606060;
+}
+.con_l_nav li a:hover{
+	text-decoration: none;
+}
+.con_l_nav li.list-group-item.active{
+	background-color:#00CCCC;
+	border: none;
+}
+
+/* 让表格与框之间有一定间隙 */
+.add{ 
+	padding: 10px;
+} 
+/* 添加用户区域的头像样式设置 */
+.avatar{
+	outline: dotted 1px gray;
+	padding: 10px;
+}
+/* 添加用户区域的头像样式设置 */
+.avatar img{
+	max-height: 60px;
+}
+.avatarpic{
+	max-height: 20px;
+}
